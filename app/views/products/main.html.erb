@@ -1,4 +1,28 @@
+<div class="product-container">
 <% @products.each do |p| %>
-    <div><%= p[:name] %></div>
-    <div><%= p[:region] %></div>
+    <% array =  p['name'].split() %>
+    <% product_line = array[1] %>
+
+    <div class="product_box">
+      <div class="product-line <%= product_line.downcase %>">
+        <%= 'MYOB ' + product_line  %>
+      </div>
+
+      <div class='product-name'>
+        <div class="region"><%= p['region'] %></div>
+        <%= array[2, array.length].join(" ") %>
+      </div>
+
+      <div class="pricing">
+        <span class="price">$<%= p['price']['price_tax_inclusive'] %></span>/<%= p['price']['unit_of_measure'] %>
+      </div>
+
+      <div class="link"><%= link_to 'Find out more >', "#" %></div>
+
+      <div class="select-button">
+        <button>Select</button>
+      </div>
+    </div>
 <% end %>
+</div>
+
