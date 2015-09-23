@@ -4,7 +4,7 @@ require 'json'
 class ProductCatalogApi
 
   def initialize
-    @base_url = 'http://localhost:3000/products'
+    @base_url = 'http://localhost:3000/products?region='
   end
 
   def make_request(param = '')

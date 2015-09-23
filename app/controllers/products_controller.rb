@@ -9,12 +9,12 @@ class ProductsController < ApplicationController
   end
 
   def au_products
-    @products = @@service.make_request('?region=AU')
+    @products = @@service.make_request('AU')
     render 'main'
   end
 
   def nz_products
-    @products = @@service.make_request('?region=NZ')
+    @products = @@service.make_request('NZ')
     render 'main'
   end
 end
