@@ -1,16 +1,16 @@
 <div class="product-container">
 <% @products.each do |p| %>
     <% array =  p['name'].split() %>
-    <% product_line = array[1] %>
+    <% product_line = p['product_line']['name'] %>
 
     <div class="product_box">
       <div class="product-line <%= product_line.downcase %>">
-        <%= 'MYOB ' + product_line  %>
+        <%= 'MYOB ' + product_line %>
       </div>
 
       <div class='product-name'>
         <div class="region"><%= p['region'] %></div>
-        <%= array[2, array.length].join(" ") %>
+        <%= name = array[2, array.length].join(" ") %>
       </div>
 
       <div class="pricing">
