@@ -5,16 +5,16 @@
 
     <div class="product_box">
       <div class="product-line <%= product_line.downcase %>">
-        <%= 'MYOB ' + product_line %>
+        <%= product_line %>
       </div>
 
       <div class='product-name'>
         <div class="region"><%= p['region'] %></div>
-        <%= name = array[2, array.length].join(" ") %>
+        <div class="name"><%= name = array[2, array.length].join(" ") %></div>
       </div>
 
       <div class="pricing">
-        <span class="price">$<%= p['price']['price_tax_inclusive'] %></span>/<%= p['price']['unit_of_measure'] %>
+        <span class="price">$<%= p['price']['price_tax_inclusive'].to_i %></span> /<%= p['price']['unit_of_measure'][0..1].downcase %>
       </div>
 
       <div class="link"><%= link_to 'Find out more >', p['more_info_link'] %></div>
